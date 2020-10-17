@@ -44,12 +44,17 @@ Since you are to focus on the scheduling actions taken by the system you are sim
       2. A process completes a computational step.
 ###         All times should be simulated.
 
-Each time a process starts or terminates your program should print a snap shot containing:
+### Each time a process starts or terminates your program should print a snap shot containing:
+```
       1. The current simulated time in milliseconds,
-      2. The process id (PID) of the process causing the snapshot, and the states of all other active processes When all the processes in your input stream have completed, your simulator should print a summary report listing:
+      2. The process id (PID) of the process causing the snapshot, and the states of all other active processes.
+```
+When all the processes in your input stream have completed, your simulator should print a summary report listing:
+```
       1. The total simulation time n millisecond,
       2. The number of processes that have completed,
       3. The total number of SSD accesses,
       4. The average number of busy cores (between zero and NCORES),
       5. The SSD utilization, that is, the fraction of time that device was busy (between zero and one).
+```
 
