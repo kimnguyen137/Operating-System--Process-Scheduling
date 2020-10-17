@@ -20,24 +20,30 @@ START 12040 // new process
 ...
 END // end of data
 ```
+All times will be expressed in milliseconds. All process start times will be monotonically increasing. The last line of input will contain an END. 
 
-All times will be expressed in milliseconds. All process start times will be monotonically increasing. The last line of input will contain an END. Processor Management: Your program should have two ready queues, namely:
+### Processor Management: 
+Your program should have two ready queues, namely:
     1. A interactive queue that contains all processes have just completed a user interaction,
     2. A non-interactive queue that contains all other processes waiting for a core. Each time your program answers process core requests, it should give priority to processes in the interactive queue and only allocate cores to processes from the non-interactive queue when the interactive queue is empty.
-      Both ready queues should be FIFO queues and keep all processes ordered according to their queue arrival time in strict first-come first-served order. SSD Management: SSD access times are much shorter than disk access times with write requests taking less than a millisecond and read requests taking much less than that.
-      As a result, write request timings will be rounded up to one millisecond and read requests timing will be rounded down to zero. SSD scheduling will be strictly first-come first-served.
-      To simplify your life, we will also assume that:
-          1. There is no contention for main memory,
-          2. Context switch times can be neglected, and
-          3. User think times and other delays, like overlapping windows, are included in the TTY times. In addition, you can assume that all inputs will always be correct.
+      Both ready queues should be FIFO queues and keep all processes ordered according to their queue arrival time in strict first-come first-served order.
+### SSD Management: 
+SSD access times are much shorter than disk access times with write requests taking less than a millisecond and read requests taking much less than that.
+As a result, write request timings will be rounded up to one millisecond and read requests timing will be rounded down to zero. SSD scheduling will be strictly first-come first-served.
+To simplify your life, we will also assume that:
+      1. There is no contention for main memory,
+      2. Context switch times can be neglected, and
+      3. User think times and other delays, like overlapping windows, are included in the TTY times. In addition, you can assume that all inputs will always be correct.
           
-Program organization: Your program should read its input file name though input redirection as in:
-      ./a.out < input.txt
+### Program organization: 
+Your program should read its input file name though input redirection as in:
+###     ./a.out < input.txt
 Your program should have one process table with one entry per process containing its process id, the process class, its process arrival time and its current state (RUNNING, READY or BLOCKED).
 Since you are to focus on the scheduling actions taken by the system you are simulating, your program will only have to intervene whenever
       1. A process is loaded into memory,
       2. A process completes a computational step.
-          All times should be simulated.
+###         All times should be simulated.
+
 Each time a process starts or terminates your program should print a snap shot containing:
       1. The current simulated time in milliseconds,
       2. The process id (PID) of the process causing the snapshot, and the states of all other active processes When all the processes in your input stream have completed, your simulator should print a summary report listing:
