@@ -1,11 +1,11 @@
 # Operating-System--Process-Scheduling
-SIMULATE CORE SCHEDULING
-Process Scheduling
+## SIMULATE CORE SCHEDULING
 
-SPECIFICATIONS
+## SPECIFICATIONS
   You are to simulate the execution of processes by a tablet with a large memory, one display, a multi-core processing unit, and one solid-state drive. Each  process will be described by its start time and its process id followed by a sequence of resource requests. These resources requests will include core requests (CORE), SSD requests (SSD) and user interactions (TTY).
   
-  Your input will be a sequence of pairs as in:
+### Your input will be a sequence of pairs as in:
+```
 NCORES 2 // number of cores
 START 12000 // new process
 PID 23 // process ID
@@ -19,7 +19,8 @@ CORE 20 // request CORE for 20 ms
 START 12040 // new process
 ...
 END // end of data
- 
+```
+
 All times will be expressed in milliseconds. All process start times will be monotonically increasing. The last line of input will contain an END. Processor Management: Your program should have two ready queues, namely:
     1. A interactive queue that contains all processes have just completed a user interaction,
     2. A non-interactive queue that contains all other processes waiting for a core. Each time your program answers process core requests, it should give priority to processes in the interactive queue and only allocate cores to processes from the non-interactive queue when the interactive queue is empty.
